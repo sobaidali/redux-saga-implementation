@@ -1,12 +1,14 @@
-import { IMAGES } from '../constants';
+import { combineReducers } from 'redux';
 
-const imagesReducer = (state = [], action) => {
-    switch (action.type) {
-        case IMAGES.LOAD_SUCCESS:
-            return { ...state, ...action.images };
-            break;
-        default:
-            return state;
-            break;
-    }
-}
+//reducers
+import loadingReducer from './loadingReducer';
+import imagesReducer from './imagesReducer';
+import errorReducer from './errorReducer';
+
+const rootReducer = combineReducers({
+    isLoading: loadingReducer,
+    images: imagesReducer,
+    error: errorReducer,
+});
+
+export default rootReducer;
