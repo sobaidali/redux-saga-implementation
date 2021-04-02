@@ -9,9 +9,9 @@ const setImages = images => ({
     images,
 });
 
-const setError = error => ({
+const setErrors = error => ({
     type: IMAGES.LOAD_FAIL,
     error,
 });
 
-export { loadImages, setImages, setError };
+export { loadImages, setImages, setErrors };
