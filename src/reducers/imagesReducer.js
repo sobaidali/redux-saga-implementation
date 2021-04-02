@@ -10,3 +10,5 @@ const imagesReducer = (state = [], action) => {
             break;
     }
 }
+
+export default imagesReducer;

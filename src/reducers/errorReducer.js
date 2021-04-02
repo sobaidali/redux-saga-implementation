@@ -14,3 +14,5 @@ const errorReducer = (State = null, action) => {
             break;
     }
 }
+
+export default errorReducer;

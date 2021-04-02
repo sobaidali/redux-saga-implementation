@@ -16,3 +16,5 @@ const loadingReducer = (state = false, action) => {
             break;
     }
 }
+
+export default loadingReducer;
