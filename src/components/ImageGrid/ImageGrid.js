@@ -13,11 +13,11 @@ class ImageGrid extends Component {
     render() {
         const { images, error, loadImages } = this.props;
 
-        console.log("This is images: ", images)
+        console.log("this is images: ", images)
         return (
             <div className="content">
                 <section className="grid">
-                    {images.map(image => (
+                    {Object.entries(images).map(([key, image]) => (
                         <div
                             key={image.id}
                             className={`item item-${Math.ceil(
@@ -30,8 +30,8 @@ class ImageGrid extends Component {
                             />
                         </div>
                     ))}
-                    <a onClick={() => loadImages()}>Load Images</a>
                 </section>
+                <a onClick={() => loadImages()}>Load Images</a>
                 {error && <div className='error'>{JSON.stringify(error)}</div>}
             </div>
         );

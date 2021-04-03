@@ -10,6 +10,8 @@ const fetchImages = async page => {
         console.log('This is error: ', err);
     }
 
+    console.log("This is data: ", data)
+
     return data;
 }
 
