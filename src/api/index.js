@@ -6,13 +6,23 @@ const url = 'https://api.unsplash.com/photos/?client_id='
 const fetchImages = async page => {
     try {
         var { data } = await axios.get(`${url}${key}&per_page=36&page=${page}`);
+
+        return data;
     } catch (err) {
         console.log('This is error: ', err);
+        return err;
     }
-
-    console.log("This is data: ", data)
-
-    return data;
 }
 
-export { fetchImages };
+const fetchImageStats = async id => {
+    try {
+        var { data } = await axios.get(`${url}${id}/statistics${key}`);
+
+        return data;
+    } catch (err) {
+        console.log('This is error:', err)
+        return err;
+    }
+}
+
+export { fetchImages, fetchImageStats };
